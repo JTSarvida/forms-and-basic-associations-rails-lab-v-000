@@ -28,6 +28,6 @@ class Song < ActiveRecord::Base
   
   def note_contents
     self.notes.map(&:content)
-    self.notes.delete_if(&:blank?)
+    self.notes.delete_all(&:blank?)
   end
 end
