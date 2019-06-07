@@ -27,7 +27,7 @@ class Song < ActiveRecord::Base
   end
   
   def note_contents
-    self.notes.reject(&:empty?)
     self.notes.map(&:content)
+    self.notes.delete_if(&:blank?)
   end
 end
