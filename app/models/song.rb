@@ -21,10 +21,10 @@ class Song < ActiveRecord::Base
   end
   
   def note_contents=(content)
-    self.content = Note.find_or_create_by(name: name)
+    self.note.content = Note.find_or_create_by(name: name)
   end
   
   def note_contents
-    self.content ? self.content.name : nil
+    self.note.content ? self.content.name : nil
   end
 end
