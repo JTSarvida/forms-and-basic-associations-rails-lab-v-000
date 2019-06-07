@@ -25,6 +25,6 @@ class Song < ActiveRecord::Base
   end
   
   def note_contents
-    self.note.content ? self.content.name : nil
+    self.note.content ? self.note.content.name : nil
   end
 end
