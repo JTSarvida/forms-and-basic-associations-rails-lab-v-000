@@ -23,7 +23,10 @@ class Song < ActiveRecord::Base
   def note_contents=(notes)
     notes.each do |content|
       if content.include?("")
-      self.notes.build(content: content)
+        return
+      else
+        self.notes.build(content: content)
+      end
     end
   end
   
